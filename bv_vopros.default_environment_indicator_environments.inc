@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * vopros_base2.default_environment_indicator_environments.inc
+ * bv_vopros.default_environment_indicator_environments.inc
  */
 
 /**
@@ -23,34 +23,7 @@ function bv_vopros_default_environment_indicator_environment() {
     'position' => 'top',
     'fixed' => 0,
   );
-
-  $environment = new stdClass();
-  $environment->disabled = FALSE; /* Edit this to true to make a default environment disabled initially */
-  $environment->api_version = 1;
-  $environment->machine = 'production';
-  $environment->name = 'Production';
-  $environment->regexurl = 'adm.biblioteksvagten.dk';
-  $environment->settings = array(
-    'color' => '#000000',
-    'text_color' => '#ffffff',
-    'weight' => '',
-    'position' => 'top',
-    'fixed' => 0,
-  );
-
-  $environment = new stdClass();
-  $environment->disabled = FALSE; /* Edit this to true to make a default environment disabled initially */
-  $environment->api_version = 1;
-  $environment->machine = 'vopros';
-  $environment->name = 'Vopros';
-  $environment->regexurl = 'vopros.biblioteksvagten.dk';
-  $environment->settings = array(
-    'color' => '#9a6b00',
-    'text_color' => '#ffffff',
-    'weight' => '',
-    'position' => 'top',
-    'fixed' => 0,
-  );
+  $export['development'] = $environment;
 
   $environment = new stdClass();
   $environment->disabled = FALSE; /* Edit this to true to make a default environment disabled initially */
@@ -65,6 +38,37 @@ function bv_vopros_default_environment_indicator_environment() {
     'position' => 'top',
     'fixed' => 0,
   );
+  $export['forsk'] = $environment;
+
+  $environment = new stdClass();
+  $environment->disabled = FALSE; /* Edit this to true to make a default environment disabled initially */
+  $environment->api_version = 1;
+  $environment->machine = 'production';
+  $environment->name = 'Production';
+  $environment->regexurl = 'adm.biblioteksvagten.dk';
+  $environment->settings = array(
+    'color' => '#000000',
+    'text_color' => '#ffffff',
+    'weight' => '',
+    'position' => 'top',
+    'fixed' => 0,
+  );
+  $export['production'] = $environment;
+
+  $environment = new stdClass();
+  $environment->disabled = FALSE; /* Edit this to true to make a default environment disabled initially */
+  $environment->api_version = 1;
+  $environment->machine = 'vopros';
+  $environment->name = 'Vopros';
+  $environment->regexurl = 'vopros.biblioteksvagten.dk';
+  $environment->settings = array(
+    'color' => '#9a6b00',
+    'text_color' => '#ffffff',
+    'weight' => '',
+    'position' => 'top',
+    'fixed' => 0,
+  );
+  $export['vopros'] = $environment;
 
   return $export;
 }
