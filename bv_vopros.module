@@ -64,10 +64,6 @@ function bv_vopros_form_vopros_embed_question_alter(&$form, &$form_state) {
       // before the form submit handler gets at it.
       array_unshift($form['#submit'], 'bv_vopros_vopros_embed_question_submit');
     }
-
-    if (isset($form['user_postal_code'])) {
-      $form['user_postal_code']['#access'] = FALSE;
-    }
   }
 }
 
